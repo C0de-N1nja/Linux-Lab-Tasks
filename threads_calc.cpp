@@ -1,18 +1,14 @@
 #include<iostream>
 #include<thread>
 using namespace std;
-void my_function(){
-    int a, b, sum = 0;
-    cout<<"Enter the 1st value: ";
-    cin>>a;
-    cout<<"Enter the 2nd value: ";
-    cin>>b;
-    sum = a + b;
-    cout<<"The sum is: "<<sum<<endl;
+void my_function(int num1, int num2){
+    int sum = 0;
+    sum = num1 + num2;
+    cout<<"The sum of two numbers is: "<<sum<<endl;
     cout<<"Thread Execution!"<<endl;
 }
 int main(){
-    thread t(my_function);
+    thread t(my_function, 5, 5);
     t.join();
 
     cout<<"Main function executed!"<<endl;
